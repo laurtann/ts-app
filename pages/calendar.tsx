@@ -10,7 +10,7 @@ export default function Home() {
         <meta name="description" content="A Workout Calendar for Creators" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <Typography variant="h1">Hello I am home</Typography>
+        <Typography variant="h1">Hello I am calendar</Typography>
     </div>
   );
 }

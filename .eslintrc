@@ -1,3 +1,27 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "extends": [
+    "next",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": true,
+        "afterColon": true,
+        "align": "colon"
+      }
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ]
+  }
 }
