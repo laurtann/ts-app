@@ -3,6 +3,14 @@
     "next",
     "next/core-web-vitals"
   ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "key-spacing": [
       "error",
@@ -21,6 +29,24 @@
       "single",
       {
         "avoidEscape": true
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "template-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "react/jsx-curly-spacing": [
+      1,
+      "always"
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120
       }
     ]
   }
