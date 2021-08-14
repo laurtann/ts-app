@@ -29,6 +29,9 @@
       "single",
       {
         "avoidEscape": true
+      },
+      {
+        "allowTemplateLiterals": true
       }
     ],
     "object-curly-spacing": [
@@ -48,6 +51,14 @@
       {
         "code": 120
       }
+    ],
+    "eol-last": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
     ]
   }
 }
