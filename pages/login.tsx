@@ -7,10 +7,10 @@ export default function LogIn() {
     <div className={ styles.container }>
       <Head>
         <title>Login</title>
-        <meta name="description" content="A Workout Calendar for Creators" />
+        <meta name="description" content="Log in to SweatCal: A Workout Calendar for Creators" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <Typography variant="h1">Hello I am login</Typography>
+      <Typography variant="h1">Hello I am login</Typography>
     </div>
   );
 }

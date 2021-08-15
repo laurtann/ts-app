@@ -1,16 +1,21 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import Typography from '@material-ui/core/Typography';
+import React, { useState } from 'react';
+import { DatePicker } from '@material-ui/pickers';
 
-export default function Calendar() {
+const StaticDatePicker = () => {
+  const [date, changeDate] = useState(new Date());
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>SweatCal</title>
-        <meta name="description" content="A Workout Calendar for Creators" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-        <Typography variant="h1">Hello I am calendar</Typography>
+    <div style={ { marginTop : '10vh' } } >
+      <DatePicker
+        autoOk
+        // orientation="landscape"
+        variant="static"
+        openTo="date"
+        value={ date }
+        onChange={ changeDate }
+      />
     </div>
   );
-}
+};
+
+export default StaticDatePicker;

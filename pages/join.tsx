@@ -6,11 +6,11 @@ export default function Join() {
   return (
     <div className={ styles.container }>
       <Head>
-        <title>Login</title>
-        <meta name="description" content="A Workout Calendar for Creators" />
+        <title>Join</title>
+        <meta name="description" content="Join SweatCal: A Workout Calendar for Creators" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <Typography variant="h1">Hello I am join</Typography>
+      <Typography variant="h1">Hello I am join</Typography>
     </div>
   );
 }

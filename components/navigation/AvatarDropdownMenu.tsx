@@ -20,7 +20,16 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }));
 
-export default function AvatarDropdownMenu(props) {
+const loggedInMenuItems = [
+  { text : 'Join', link : '/join' },
+  { text : 'Log In', link : '/login' }
+];
+
+const loggedOutMenuItems = [
+  { text : 'My Calendar', link : '/calendar' }
+];
+
+export default function AvatarDropdownMenu(props : any) {
   const { isUserLoggedIn } = props;
   const classes = useStyles();
 
@@ -31,7 +40,7 @@ export default function AvatarDropdownMenu(props) {
     setOpen(prevOpen => !prevOpen);
   };
 
-  const handleClose = (event : React.MouseEvent<EventTarget>) => {
+  const handleClose = (event: React.MouseEvent<EventTarget>) => {
     if (anchorRef.current && anchorRef.current.contains(event.target as HTMLElement)) {
       return;
     }
@@ -39,7 +48,7 @@ export default function AvatarDropdownMenu(props) {
     setOpen(false);
   };
 
-  const handleListKeyDown = (event : React.KeyboardEvent) => {
+  const handleListKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === 'Tab') {
       event.preventDefault();
       setOpen(false);
@@ -64,13 +73,13 @@ export default function AvatarDropdownMenu(props) {
         aria-haspopup="true"
         onClick={ handleToggle }
       >
-        { isUserLoggedIn ? (
+        {isUserLoggedIn ? (
           <Avatar className={ classes.avatar } alt="logged in user" src="https://robohash.org/lt" />
-          ) : (
-          <AccountCircleIcon className={ classes.avatar }/>
-          )
+        ) : (
+          <AccountCircleIcon className={ classes.avatar } />
+        )
         }
-        <DetailsIcon style={ { fontSize : 12 } }/>
+        <DetailsIcon style={ { fontSize : 12 } } />
       </Button>
       <Popper open={ open } anchorEl={ anchorRef.current } role={ undefined } transition disablePortal>
         {({ TransitionProps, placement }) => (
@@ -81,27 +90,28 @@ export default function AvatarDropdownMenu(props) {
             <Paper>
               <ClickAwayListener onClickAway={ handleClose }>
                 <MenuList autoFocusItem={ open } id="menu-list-grow" onKeyDown={ handleListKeyDown }>
-                { isUserLoggedIn ? (
-                  <MenuItem>
-                    <Link href="/calendar">
-                      My Calendar
-                    </Link>
-                  </MenuItem>
+                  {isUserLoggedIn ? (
+                    loggedOutMenuItems.map((menuItem, index) => {
+                      return (
+                        <MenuItem key={ index } onClick={ handleToggle }>
+                          <Link href={ menuItem.link }>
+                            { menuItem.text }
+                          </Link>
+                        </MenuItem>
+                      );
+                    })
                   ) : (
-                  <Fragment>
-                    <MenuItem>
-                      <Link href="/join">
-                        Join
-                      </Link>
-                    </MenuItem>
-                    <MenuItem>
-                      <Link href="/login">
-                        Log In
-                      </Link>
-                    </MenuItem>
-                  </Fragment>
+                    loggedInMenuItems.map((menuItem, index) => {
+                      return (
+                        <MenuItem key={ index } onClick={ handleToggle }>
+                          <Link href={ menuItem.link }>
+                            { menuItem.text }
+                          </Link>
+                        </MenuItem>
+                      );
+                    })
                   )
-                }
+                  }
                 </MenuList>
               </ClickAwayListener>
             </Paper>

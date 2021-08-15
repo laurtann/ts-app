@@ -1,11 +1,18 @@
 .container {
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 70vh;
+}
+
+.heroContainer {
+  background-image: url('../public/hero-image.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
 .main {
@@ -117,5 +124,31 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+
+  .container {
+    background-position: 60% 10%;
+    height: 40vh;
+  }
+}
+
+@media (min-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    background-position: 60% 10%;
+    height: 50vh;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    background-position: 60% 10%;
+    height: 60vh;
   }
 }

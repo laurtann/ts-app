@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { AppBar, Typography, Toolbar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-const isUserLoggedIn = false;
+const isUserLoggedIn = true;
 
 const useStyles = makeStyles((theme) => ({
   root : {

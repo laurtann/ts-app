@@ -28,9 +28,7 @@
       "error",
       "single",
       {
-        "avoidEscape": true
-      },
-      {
+        "avoidEscape": true,
         "allowTemplateLiterals": true
       }
     ],
